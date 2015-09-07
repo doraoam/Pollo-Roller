@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\AutoFence.cs" />
      <Compile Include="Assets\Script\CameraController.cs" />
+     <Compile Include="Assets\Script\GoalChecker.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
