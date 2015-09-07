@@ -124,26 +124,26 @@ public class AutoFence : MonoBehaviour
             {
                 float stockX = Mathf.Abs(pointX[i + 1] - pointX[i]) / (boxMax[i] - 1);
                 float[] posX = new float[boxRange];
+                bool isPluseX = true;
+
                 for (int x = 0; x < boxRange; x++)
                 {
-                    bool isPluse = true;
-
                     if (x == 0)
                     {
                         if (pointX[i + 1] > pointX[i])
                         {
                             posX[x] = pointX[i] + stockX;
-                            isPluse = true;
+                            isPluseX = true;
                         }
                         else
                         {
                             posX[x] = pointX[i] - stockX;
-                            isPluse = false;
+                            isPluseX = false;
                         }
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseX)
                         {
                             posX[x] = posX[x - 1] + stockX;
                         }
@@ -156,26 +156,26 @@ public class AutoFence : MonoBehaviour
 
                 float stockY = Mathf.Abs((pointY[i + 1]) - pointY[i]) / (boxMax[i] - 1);
                 float[] posY = new float[boxRange];
+                bool isPluseY = true;
+
                 for (int y = 0; y < boxRange; y++)
                 {
-                    bool isPluse = true;
-
                     if (y == 0)
                     {
                         if (pointY[i + 1] > pointY[i])
                         {
                             posY[y] = pointY[i] + stockY;
-                            isPluse = true;
+                            isPluseY = true;
                         }
                         else
                         {
                             posY[y] = pointY[i] - stockY;
-                            isPluse = false;
+                            isPluseY = false;
                         }
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseY)
                         {
                             posY[y] = posY[y - 1] + stockY;
                         }
@@ -188,26 +188,26 @@ public class AutoFence : MonoBehaviour
 
                 float stockZ = Mathf.Abs((pointZ[i + 1]) - pointZ[i]) / (boxMax[i] - 1);
                 float[] posZ = new float[boxRange];
+                bool isPluseZ = true;
+
                 for (int z = 0; z < boxRange; z++)
                 {
-                    bool isPluse = true;
-
                     if (z == 0)
                     {
                         if (pointZ[i + 1] > pointZ[i])
                         {
                             posZ[z] = pointZ[i] + stockZ;
-                            isPluse = true;
+                            isPluseZ = true;
                         }
                         else
                         {
                             posZ[z] = pointZ[i] - stockZ;
-                            isPluse = false;
+                            isPluseZ = false;
                         }                    
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseZ)
                         {
                             posZ[z] = posZ[z - 1] + stockZ;
                         }
@@ -228,26 +228,26 @@ public class AutoFence : MonoBehaviour
             {
                 float stockX = Mathf.Abs(pointX[0] - pointX[i]) / (boxMax[i] - 1);
                 float[] posX = new float[boxRange];
+                bool isPluseX = true;
+
                 for (int x = 0; x < boxRange; x++)
                 {
-                    bool isPluse = true;
-
                     if (x == 0)
                     {
                         if (pointX[0] > pointX[i])
                         {
                             posX[x] = pointX[i] + stockX;
-                            isPluse = true;
+                            isPluseX = true;
                         }
                         else
                         {
                             posX[x] = pointX[i] - stockX;
-                            isPluse = false;
+                            isPluseX = false;
                         }
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseX)
                         {
                             posX[x] = posX[x - 1] + stockX;
                         }
@@ -260,26 +260,26 @@ public class AutoFence : MonoBehaviour
 
                 float stockY = Mathf.Abs(pointY[0] - pointY[i]) / (boxMax[i] - 1);
                 float[] posY = new float[boxRange];
+                bool isPluseY = true;
+
                 for (int y = 0; y < boxRange; y++)
                 {
-                    bool isPluse = true;
-
                     if (y == 0)
                     {
                         if (pointY[0] > pointY[i])
                         {
                             posY[y] = pointY[i] + stockY;
-                            isPluse = true;
+                            isPluseY = true;
                         }
                         else
                         {
                             posY[y] = pointY[i] - stockY;
-                            isPluse = false;
+                            isPluseY = false;
                         }
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseY)
                         {
                             posY[y] = posY[y - 1] + stockY;
                         }
@@ -292,26 +292,26 @@ public class AutoFence : MonoBehaviour
 
                 float stockZ = Mathf.Abs(pointZ[0] - pointZ[i]) / (boxMax[i] - 1);
                 float[] posZ = new float[boxRange];
+                bool isPluseZ = true;
+
                 for (int z = 0; z < boxRange; z++)
                 {
-                    bool isPluse = true;
-
                     if (z == 0)
                     {
                         if (pointZ[0] > pointZ[i])
                         {
                             posZ[z] = pointZ[i] + stockZ;
-                            isPluse = true;
+                            isPluseZ = true;
                         }
                         else
                         {
                             posZ[z] = pointZ[i] - stockZ;
-                            isPluse = false;
+                            isPluseZ = false;
                         }
                     }
                     else
                     {
-                        if (isPluse)
+                        if (isPluseZ)
                         {
                             posZ[z] = posZ[z - 1] + stockZ;
                         }
