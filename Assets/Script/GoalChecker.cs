@@ -13,7 +13,7 @@ public class GoalChecker : MonoBehaviour
 
             isOver = true;
 
-            //Application.LoadLevel(nextLevel);
+            Application.LoadLevel(nextLevel);
         }
     }
 }
