@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\GoalChecker.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\Score.cs" />
+     <Compile Include="Assets\Script\Switch.cs" />
      <Compile Include="Assets\Script\Timer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

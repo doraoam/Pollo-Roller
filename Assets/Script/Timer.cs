@@ -32,7 +32,6 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            //timerText.color = Color.red;
             timerText.text = "Game Over";
             finalTime = timer;
             GoalChecker.isOver = true;
