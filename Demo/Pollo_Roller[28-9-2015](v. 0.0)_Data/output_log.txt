@@ -1,0 +1,107 @@
+Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.091 seconds
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Admin\Documents\Pollo Roller\Demo\Pollo_Roller[28-9-2015](v. 0.0)_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1994 -> priority: 1 
+19
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.048028 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 890.
+Total: 0.524657 ms (FindLiveObjects: 0.077179 ms CreateObjectMapping: 0.038589 ms MarkObjects: 0.341971 ms  DeleteObjects: 0.064453 ms)
+
+38
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.328525 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 910.
+Total: 0.330887 ms (FindLiveObjects: 0.058705 ms CreateObjectMapping: 0.022579 ms MarkObjects: 0.232770 ms  DeleteObjects: 0.013958 ms)
+
+56
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.753373 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 910.
+Total: 0.370708 ms (FindLiveObjects: 0.076769 ms CreateObjectMapping: 0.033663 ms MarkObjects: 0.241391 ms  DeleteObjects: 0.016421 ms)
+
+72
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.772257 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1525.
+Total: 0.639605 ms (FindLiveObjects: 0.146969 ms CreateObjectMapping: 0.056242 ms MarkObjects: 0.417098 ms  DeleteObjects: 0.016421 ms)
+
+78
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.155743 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1490.
+Total: 0.467593 ms (FindLiveObjects: 0.110432 ms CreateObjectMapping: 0.034073 ms MarkObjects: 0.302560 ms  DeleteObjects: 0.017652 ms)
+
+97
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.651202 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1178.
+Total: 0.452814 ms (FindLiveObjects: 0.107558 ms CreateObjectMapping: 0.029558 ms MarkObjects: 0.300918 ms  DeleteObjects: 0.013136 ms)
+
+106
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.036228 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 9490.
+Total: 1.826037 ms (FindLiveObjects: 0.444193 ms CreateObjectMapping: 0.172012 ms MarkObjects: 1.130188 ms  DeleteObjects: 0.078000 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+108
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+UnloadTime: 20.113092 ms
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 173.
+Total: 0.375224 ms (FindLiveObjects: 0.016831 ms CreateObjectMapping: 0.009852 ms MarkObjects: 0.164211 ms  DeleteObjects: 0.182275 ms)
+

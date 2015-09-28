@@ -3,16 +3,19 @@ using System.Collections;
 
 public class Switch : MonoBehaviour
 {
+    Animator animator;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        GameObject slope = GameObject.FindGameObjectWithTag("slope");
+        animator = slope.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision col)
     {
-
+        if (col.collider.CompareTag("Player") && GoalChecker.isOver != true)
+        {
+            animator.SetBool("isEnabled",true);
+        }
     }
 }
