@@ -5,9 +5,11 @@ using System.Collections;
 public class BomberWall : MonoBehaviour
 {
     public Text deadCountText;
+    
     public float respawnPointX;
     public float respawnPointY;
     public float respawnPointZ;
+
     public GameObject player;
 
     int deadCount;
@@ -21,7 +23,7 @@ public class BomberWall : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void update()
+    void Update()
     {
         if (GoalChecker.isOver == true)
         {
@@ -38,6 +40,21 @@ public class BomberWall : MonoBehaviour
             player.transform.position = new Vector3(respawnPointX, respawnPointY, respawnPointZ);
 
             deadCountText.text = "Dead Count : " + deadCount;
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Player") && GoalChecker.isOver != true)
+        {
+            deadCount += 1;
+
+            player.transform.position = new Vector3(respawnPointX, respawnPointY, respawnPointZ);
+
+            deadCountText.text = "Dead Count : " + deadCount;
+        }
+        else if(col.CompareTag("Player")){
+            player.transform.position = new Vector3(respawnPointX, respawnPointY, respawnPointZ);
         }
     }
 }
