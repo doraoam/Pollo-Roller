@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
         {
             levelScore = (int)Timer.finalTime - BomberWall.totalDead;
             totalScore += levelScore;
-            Debug.Log(totalScore);
+            Debug.Log(levelScore + " " + totalScore);
         }
     }
 }
