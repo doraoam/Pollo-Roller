@@ -39,6 +39,8 @@ public class PauseMenu : MonoBehaviour
     public void ReStart()
     {
         GoalChecker.isOver = false;
+        GoalChecker.finishAnimation = false;
+        GoalChecker.isFail = false;
         Application.LoadLevel(Application.loadedLevel);
         isPaused = false;
     }
