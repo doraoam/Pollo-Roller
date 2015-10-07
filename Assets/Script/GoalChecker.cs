@@ -13,6 +13,8 @@ public class GoalChecker : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject Pop;
+
     public Camera elevatorCamera;
 
     public Camera mainCamera;
@@ -42,6 +44,7 @@ public class GoalChecker : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Elevator_playerEnter"))
         {
+            Instantiate(Pop, transform.position, Quaternion.identity);
             animator.SetBool("isFinished", true);
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Elevator_Disappear"))
