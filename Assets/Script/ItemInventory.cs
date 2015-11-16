@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ItemInventory : MonoBehaviour
 {
@@ -7,6 +8,13 @@ public class ItemInventory : MonoBehaviour
     float delay = 0.25f;
     IWeapon[] weapons;
     private int currentWeaponIndex = 0;
+
+    Dictionary<string, int> playerInventory;
+
+    void Awake()
+    {
+        playerInventory = new Dictionary<string, int>();
+    }
 
     // Use this for initialization
     void Start()
@@ -24,16 +32,56 @@ public class ItemInventory : MonoBehaviour
         weapons[currentWeaponIndex].gameObject.SetActive(true);
     }
 
+    public void AddItem(string name, int amount)
+    {
+        if (playerInventory.ContainsKey(name))
+        {
+            playerInventory[name] += amount;
+        }
+        else
+        {
+            playerInventory.Add(name, amount);
+        }
+
+        if (playerInventory[name] < 0)
+        {
+            playerInventory[name] = 0;
+        }
+    }
+
+    public void RemoveItem(string name, int amount)
+    {
+        if (playerInventory.ContainsKey(name))
+        {
+            playerInventory[name] -= amount;
+        }
+
+        if (playerInventory[name] < 0)
+        {
+            playerInventory[name] = 0;
+        }
+    }
+
     void Update()
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollWheel > 0 && timer < 0)
-        {
-            timer = delay;
 
-            ChangeWeapon(false);
+        if (playerInventory.Count > 0)
+        {
+            if (scrollWheel > 0 && timer < 0)
+            {
+                timer = delay;
+
+                ChangeWeapon(true);
+            }
+            else if (scrollWheel < 0 && timer < 0)
+            {
+                timer = delay;
+
+                ChangeWeapon(false);
+            }
+            timer -= Time.deltaTime;
         }
-        timer -= Time.deltaTime;
     }
 
     void ChangeWeapon(bool next)
@@ -56,5 +104,24 @@ public class ItemInventory : MonoBehaviour
             }
         }
         DisableWeapons();
+    }
+
+    public bool HasItem(string name)
+    {
+        if (playerInventory.ContainsKey(name))
+        {
+            if (playerInventory[name] > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 }

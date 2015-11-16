@@ -14,6 +14,7 @@ public class IWeapon : MonoBehaviour
         {
             if (timer <= 0)
             {
+                Use();
                 timer = fireDelay;
             }
         }
