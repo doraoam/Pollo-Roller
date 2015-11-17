@@ -6,7 +6,9 @@ public class ItemInventory : MonoBehaviour
 {
     float timer = 0.0f;
     float delay = 0.25f;
-    IWeapon[] weapons;
+
+    public float fireDelay = 0.25f;
+
     private int currentWeaponIndex = 0;
 
     Dictionary<string, int> playerInventory;
@@ -16,36 +18,42 @@ public class ItemInventory : MonoBehaviour
         playerInventory = new Dictionary<string, int>();
     }
 
-    // Use this for initialization
-    void Start()
-    {
-        weapons = GetComponentsInChildren<IWeapon>();
-        DisableWeapons();
-    }
-
-    // Update is called once per frame
-    void DisableWeapons(){
-        for (int i = 0; i < weapons.Length; i++)
-        {
-            weapons[i].gameObject.SetActive(false);
-        }
-        weapons[currentWeaponIndex].gameObject.SetActive(true);
-    }
-
     public void AddItem(string name, int amount)
     {
-        if (playerInventory.ContainsKey(name))
+        List<string> list = new List<string>(playerInventory.Keys);
+        int count = 0;
+        foreach (string obj in list)
         {
-            playerInventory[name] += amount;
+            count += playerInventory[obj];
+        }
+
+        if (count < 4)
+        {
+            if (playerInventory.ContainsKey(name))
+            {
+                playerInventory[name] += amount;
+                string check = name.Substring(1);
+                if (check != "4")
+                {
+                    int num = int.Parse(name);
+                    num += 1;
+                    string newNum = num.ToString();
+                    playerInventory.Add(newNum, 1);
+                }
+            }
+            else
+            {
+                playerInventory.Add(name, amount);
+            }
+
+            if (playerInventory[name] < 0)
+            {
+                playerInventory[name] = 0;
+            }
         }
         else
         {
-            playerInventory.Add(name, amount);
-        }
-
-        if (playerInventory[name] < 0)
-        {
-            playerInventory[name] = 0;
+            Debug.Log("You can't keep more");
         }
     }
 
@@ -54,6 +62,11 @@ public class ItemInventory : MonoBehaviour
         if (playerInventory.ContainsKey(name))
         {
             playerInventory[name] -= amount;
+
+            if (playerInventory[name] == 0)
+            {
+                playerInventory.Remove(name);
+            }
         }
 
         if (playerInventory[name] < 0)
@@ -66,22 +79,28 @@ public class ItemInventory : MonoBehaviour
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
-        if (playerInventory.Count > 0)
+        if (scrollWheel > 0 && timer < 0)
         {
-            if (scrollWheel > 0 && timer < 0)
-            {
-                timer = delay;
+            timer = delay;
 
-                ChangeWeapon(true);
-            }
-            else if (scrollWheel < 0 && timer < 0)
-            {
-                timer = delay;
-
-                ChangeWeapon(false);
-            }
-            timer -= Time.deltaTime;
+            ChangeWeapon(true);
         }
+        else if (scrollWheel < 0 && timer < 0)
+        {
+            timer = delay;
+
+            ChangeWeapon(false);
+        }
+
+        if (Input.GetButton("Fire1"))
+        {
+            if (timer <= 0)
+            {
+                timer = fireDelay;
+            }
+        }
+
+        timer -= Time.deltaTime;
     }
 
     void ChangeWeapon(bool next)
@@ -90,7 +109,7 @@ public class ItemInventory : MonoBehaviour
         {
             currentWeaponIndex++;
 
-            if (currentWeaponIndex >= weapons.Length)
+            if (currentWeaponIndex >= playerInventory.Count)
             {
                 currentWeaponIndex = 0;
             }
@@ -100,10 +119,9 @@ public class ItemInventory : MonoBehaviour
             currentWeaponIndex--;
             if (currentWeaponIndex < 0)
             {
-                currentWeaponIndex = weapons.Length - 1;
+                currentWeaponIndex = playerInventory.Count - 1;
             }
         }
-        DisableWeapons();
     }
 
     public bool HasItem(string name)

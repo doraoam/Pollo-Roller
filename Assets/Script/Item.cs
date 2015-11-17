@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Item : Interactable
+public class Item : MonoBehaviour
 {
     public string itemName = "";
     public int amount = 1;
@@ -16,13 +16,16 @@ public class Item : Interactable
             this.enabled = false;
             return;
         }
-        gameObject.layer = LayerMask.NameToLayer("Interactable");
+        //gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
-    public override void Use()
+    void OnCollisionEnter(Collision col)
     {
-        inventory.AddItem(itemName, amount);
-        Destroy(gameObject);
+        if (col.collider.CompareTag("Player"))
+        {
+            inventory.AddItem(itemName, amount);
+            Destroy(gameObject);
+        }
     }
 
     public void Update()
