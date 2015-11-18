@@ -7,7 +7,7 @@ public class ItemInventory : MonoBehaviour
     float timer = 0.0f;
     float delay = 0.25f;
 
-    public float fireDelay = 0.25f;
+    public string spellName;
 
     private int currentWeaponIndex = 0;
 
@@ -39,6 +39,7 @@ public class ItemInventory : MonoBehaviour
                     num += 1;
                     string newNum = num.ToString();
                     playerInventory.Add(newNum, 1);
+                    spellName = newNum;
                 }
             }
             else
@@ -94,10 +95,11 @@ public class ItemInventory : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            if (timer <= 0)
-            {
-                timer = fireDelay;
-            }
+            GameObject spellCreater = GameObject.FindGameObjectWithTag("script");
+            Spell spellCaster = spellCreater.GetComponent<Spell>();
+
+            spellCaster.setPrefab(spellName);
+            spellCaster.Use();
         }
 
         timer -= Time.deltaTime;
@@ -105,11 +107,14 @@ public class ItemInventory : MonoBehaviour
 
     void ChangeWeapon(bool next)
     {
+        List<string> weapons = new List<string>(this.playerInventory.Keys);
+        string[] spellList = weapons.ToArray();
+        
         if (next == true)
         {
             currentWeaponIndex++;
-
-            if (currentWeaponIndex >= playerInventory.Count)
+            
+            if (currentWeaponIndex >= weapons.Count)
             {
                 currentWeaponIndex = 0;
             }
@@ -117,11 +122,14 @@ public class ItemInventory : MonoBehaviour
         else if (next == false)
         {
             currentWeaponIndex--;
+            
             if (currentWeaponIndex < 0)
             {
-                currentWeaponIndex = playerInventory.Count - 1;
+                currentWeaponIndex = weapons.Count - 1;
             }
         }
+
+        spellName = spellList[currentWeaponIndex];
     }
 
     public bool HasItem(string name)

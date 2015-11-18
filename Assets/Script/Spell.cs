@@ -3,33 +3,17 @@ using System.Collections;
 
 public class Spell : IWeapon
 {
-    public string spellName;
-    public int amount;
-
     public GameObject spellPrefab;
     public Transform projectileExit;
 
-    bool useable = true;
-
-    ItemInventory inventory;
-
-    void Awake()
+    public void setPrefab(string name)
     {
-        inventory = GameObject.FindWithTag("Player").GetComponent<ItemInventory>();
+        spellPrefab = (GameObject)Resources.Load("Prefab/Item" + name);
     }
 
     public override void Use()
     {
         GameObject spell = (GameObject)Instantiate(spellPrefab, projectileExit.position, projectileExit.rotation);
         Destroy(spell, 15);
-        useable = false;
-    }
-
-    void Update()
-    {
-        if (useable != true)
-        {
-            inventory.RemoveItem(name, amount);
-        }
     }
 }
