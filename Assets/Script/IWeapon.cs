@@ -7,6 +7,13 @@ public class IWeapon : MonoBehaviour
     public float fireDelay = 0.25f;
     public bool hasWeapon = true;
 
+    ItemInventory inventory;
+
+    void Awake()
+    {
+        inventory = GameObject.FindWithTag("Player").GetComponent<ItemInventory>();
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {

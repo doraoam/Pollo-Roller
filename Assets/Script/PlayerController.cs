@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float jumpForce = 250;
+
+    public bool jumpable = false;
 
     private Rigidbody rb;
 
@@ -11,6 +14,18 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if (jumpable == true)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                Vector3 force = new Vector3(0, 1, 0) * jumpForce;
+                rb.AddForce(force);
+            }
+        }
     }
 
     // Update is called once per frame

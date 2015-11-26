@@ -45,6 +45,7 @@ public class ItemInventory : MonoBehaviour
             else
             {
                 playerInventory.Add(name, amount);
+                spellName = name;
             }
 
             if (playerInventory[name] < 0)
@@ -80,26 +81,30 @@ public class ItemInventory : MonoBehaviour
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
 
-        if (scrollWheel > 0 && timer < 0)
+        if (playerInventory.Count > 0)
         {
-            timer = delay;
+            if (scrollWheel > 0 && timer < 0)
+            {
+                timer = delay;
 
-            ChangeWeapon(true);
+                ChangeWeapon(true);
+            }
+            else if (scrollWheel < 0 && timer < 0)
+            {
+                timer = delay;
+
+                ChangeWeapon(false);
+            }
         }
-        else if (scrollWheel < 0 && timer < 0)
-        {
-            timer = delay;
+        
 
-            ChangeWeapon(false);
-        }
-
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && playerInventory.Count >= 0)
         {
             GameObject spellCreater = GameObject.FindGameObjectWithTag("script");
             Spell spellCaster = spellCreater.GetComponent<Spell>();
 
             spellCaster.setPrefab(spellName);
-            spellCaster.Use();
+            //spellCaster.Use();
         }
 
         timer -= Time.deltaTime;

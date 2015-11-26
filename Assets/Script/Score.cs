@@ -10,6 +10,9 @@ public class Score : MonoBehaviour
     public Text levelScoreText;
     public Text TotalScoreText;
 
+    public Text gameOverLevelScoreText;
+    public Text gameOverTotalScoreText;
+
     public string nextLevel;
 
     public GameObject showScoreCanvas;
@@ -51,6 +54,8 @@ public class Score : MonoBehaviour
     {
         totalScore -= levelScore;
         GoalChecker.isOver = false;
+        GoalChecker.isFail = false;
+        GoalChecker.finishAnimation = false;
         Application.LoadLevel(Application.loadedLevel);
     }
 

@@ -19,6 +19,9 @@ public class ItemMovement : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Destroy(gameObject);
+        if (col.collider.CompareTag("Enemy"))
+        {
+            Destroy(gameObject, 1);
+        }
     }
 }

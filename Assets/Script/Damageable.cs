@@ -23,6 +23,6 @@ public class Damageable : MonoBehaviour
 
     public virtual void Dead()
     {
-
+        Destroy(this);
     }
 }
