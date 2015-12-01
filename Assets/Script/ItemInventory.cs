@@ -22,11 +22,12 @@ public class ItemInventory : MonoBehaviour
     {
         List<string> list = new List<string>(playerInventory.Keys);
         int count = 0;
+
         foreach (string obj in list)
         {
             count += playerInventory[obj];
         }
-
+        
         if (count < 4)
         {
             if (playerInventory.ContainsKey(name))
@@ -56,6 +57,14 @@ public class ItemInventory : MonoBehaviour
         else
         {
             Debug.Log("You can't keep more");
+        }
+    }
+
+    public void RemoveItem(string name)
+    {
+        if (playerInventory.ContainsKey(name))
+        {
+            playerInventory.Remove(name);
         }
     }
 
@@ -98,12 +107,19 @@ public class ItemInventory : MonoBehaviour
         }
         
 
-        if (Input.GetButton("Fire1") && playerInventory.Count >= 0)
+        if (Input.GetButton("Fire1"))
         {
             GameObject spellCreater = GameObject.FindGameObjectWithTag("script");
             Spell spellCaster = spellCreater.GetComponent<Spell>();
 
-            spellCaster.setPrefab(spellName);
+            if(playerInventory.Count == 0){
+                spellCaster.setPrefab(null);
+            }
+            else if(playerInventory.Count >= 1)
+            {
+                spellCaster.setPrefab(spellName);
+            }
+
             //spellCaster.Use();
         }
 

@@ -23,7 +23,15 @@ public class Item : MonoBehaviour
     {
         if (col.collider.CompareTag("Player"))
         {
-            inventory.AddItem(itemName, amount);
+            if (inventory.HasItem(itemName))
+            {
+                inventory.AddItem(itemName, amount);
+                inventory.RemoveItem(itemName);
+            }
+            else
+            {
+                inventory.AddItem(itemName, amount);
+            }
             Destroy(gameObject);
         }
     }
