@@ -9,6 +9,8 @@ public class Timer : MonoBehaviour
     public float timer;
     public static float finalTime;
 
+    public bool isFree;
+
     // Use this for initialization
     void Start()
     {
@@ -18,23 +20,33 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
+        if (isFree != true)
         {
-            if (GoalChecker.isOver != true)
+            if (timer > 0)
             {
-                timer -= Time.deltaTime;
-                timerText.text = timer.ToString("F0");
+                if (GoalChecker.isOver != true)
+                {
+                    timer -= Time.deltaTime;
+                    timerText.text = timer.ToString("F0");
+                }
+                else
+                {
+                    finalTime = timer;
+                }
             }
             else
             {
+                timerText.text = "Game Over";
                 finalTime = timer;
+                GoalChecker.isOver = true;
             }
         }
         else
         {
-            timerText.text = "Game Over";
+            timer = 60;
+
+            timerText.text = "Free Play";
             finalTime = timer;
-            GoalChecker.isOver = true;
         }
     }
 }

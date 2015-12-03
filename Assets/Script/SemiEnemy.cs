@@ -5,6 +5,7 @@ public class SemiEnemy : MonoBehaviour
 {
     public float health = 0;
     public bool alive = true;
+    public bool isDeadAble;
 
     void OnCollisionEnter(Collision col)
     {

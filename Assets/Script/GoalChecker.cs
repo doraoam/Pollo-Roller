@@ -65,6 +65,7 @@ public class GoalChecker : MonoBehaviour
             isPlayingAnimaion = true;
 
             swapCamera();
+            inVisible();
 
             animator.SetBool("isOver", true);
         }
@@ -75,5 +76,11 @@ public class GoalChecker : MonoBehaviour
         mainCamera.enabled = false;
 
         elevatorCamera.enabled = true;
+    }
+
+    void inVisible()
+    {
+        //player.GetComponent<MeshRenderer>().enabled = false;
+        Destroy(player);
     }
 }
