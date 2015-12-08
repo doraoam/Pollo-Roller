@@ -22,7 +22,7 @@ public class ItemInventory : MonoBehaviour
     {
         List<string> list = new List<string>(playerInventory.Keys);
         int count = 0;
-
+        
         foreach (string obj in list)
         {
             count += playerInventory[obj];

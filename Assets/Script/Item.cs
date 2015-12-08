@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
     void Awake()
     {
         inventory = GameObject.FindWithTag("Player").GetComponent<ItemInventory>();
+        
         if (inventory == null)
         {
             this.enabled = false;
