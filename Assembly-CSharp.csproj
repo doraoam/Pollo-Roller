@@ -57,6 +57,7 @@
      <Compile Include="Assets\Script\Damageable.cs" />
      <Compile Include="Assets\Script\GameData.cs" />
      <Compile Include="Assets\Script\GoalChecker.cs" />
+     <Compile Include="Assets\Script\HeadShot.cs" />
      <Compile Include="Assets\Script\IWeapon.cs" />
      <Compile Include="Assets\Script\Interactable.cs" />
      <Compile Include="Assets\Script\Item.cs" />

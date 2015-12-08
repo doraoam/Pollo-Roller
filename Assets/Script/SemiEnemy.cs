@@ -7,9 +7,16 @@ public class SemiEnemy : MonoBehaviour
     public bool alive = true;
     public bool isDeadAble;
 
+    HeadShot head;
+
+    void Awake()
+    {
+        head = GetComponentInChildren<HeadShot>();
+    }
+
     void OnCollisionEnter(Collision col)
     {
-        if (col.collider.CompareTag("Item") || col.collider.CompareTag("Player"))
+        if (col.collider.CompareTag("Item"))
         {
             health--;
 
@@ -20,11 +27,26 @@ public class SemiEnemy : MonoBehaviour
         }
     }
 
+    public void setDeath()
+    {
+        alive = false;
+    }
+
     void Update()
     {
         if (alive != true)
         {
             Death();
+        }
+
+        if (head.isHurt == true)
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                alive = false;
+            }
         }
     }
 
