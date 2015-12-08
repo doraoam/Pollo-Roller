@@ -16,6 +16,7 @@ public class Switch : MonoBehaviour
         if (col.collider.CompareTag("Player") && GoalChecker.isOver != true)
         {
             animator.SetBool("isEnabled",true);
+            Destroy(gameObject);
         }
     }
 }
