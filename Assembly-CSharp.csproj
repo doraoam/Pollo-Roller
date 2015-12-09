@@ -55,6 +55,8 @@
      <Compile Include="Assets\Script\CameraController.cs" />
      <Compile Include="Assets\Script\Command.cs" />
      <Compile Include="Assets\Script\Damageable.cs" />
+     <Compile Include="Assets\Script\FallingItem.cs" />
+     <Compile Include="Assets\Script\FloorTrigger.cs" />
      <Compile Include="Assets\Script\GameData.cs" />
      <Compile Include="Assets\Script\GoalChecker.cs" />
      <Compile Include="Assets\Script\HeadShot.cs" />

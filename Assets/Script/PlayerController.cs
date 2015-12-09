@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if (jumpable == true)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || Input.GetButtonDown("JumpMouse"))
             {
                 Vector3 force = new Vector3(0, 1, 0) * jumpForce;
                 rb.AddForce(force);
