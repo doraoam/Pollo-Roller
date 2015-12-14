@@ -130,7 +130,7 @@ public class FallingItem : MonoBehaviour
                 GameObject item = (GameObject)Instantiate(itemPrefab, i, Quaternion.identity);
                 
                 count++;
-                Debug.Log(i);
+
                 //if (count >= itemAmount)
                 //{
                 //    count = 0;
