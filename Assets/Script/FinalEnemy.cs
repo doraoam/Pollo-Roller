@@ -12,8 +12,6 @@ public class FinalEnemy : MonoBehaviour
     {
         GameObject elevator = GameObject.FindGameObjectWithTag("Elevator");
         animator = elevator.GetComponent<Animator>();
-
-        GetComponent<Animator>().speed = 0.1f;
     }
 
     void OnCollisionEnter(Collision col)

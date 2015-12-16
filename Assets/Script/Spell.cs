@@ -6,7 +6,7 @@ public class Spell : IWeapon
     public GameObject spellPrefab;
     public Transform projectileExit;
 
-    string name;
+    string itemName;
 
     ItemInventory inventory;
 
@@ -24,7 +24,7 @@ public class Spell : IWeapon
     public void setPrefab(string name)
     {
         spellPrefab = (GameObject)Resources.Load("Prefab/Item" + name);
-        this.name = name;
+        itemName = name;
     }
 
     public override void Use()
@@ -32,7 +32,7 @@ public class Spell : IWeapon
         if (spellPrefab != null)
         {
             GameObject spell = (GameObject)Instantiate(spellPrefab, projectileExit.position, projectileExit.rotation);
-            inventory.RemoveItem(name);
+            inventory.RemoveItem(itemName);
             Destroy(spell, 3);
         }
     }

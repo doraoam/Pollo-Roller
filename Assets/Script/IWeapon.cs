@@ -4,7 +4,7 @@ using System.Collections;
 public class IWeapon : MonoBehaviour
 {
     private float timer = 0;
-    public float fireDelay = 0.25f;
+    public float fireDelay = 1f;
     public bool hasWeapon = true;
 
     ItemInventory inventory;

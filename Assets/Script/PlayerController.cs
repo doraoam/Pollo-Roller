@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce = 250;
 
+    public float timer = 0;
+    public float jumpDelay = 1f;
+
     public bool jumpable = false;
 
     private Rigidbody rb;
@@ -22,9 +25,15 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") || Input.GetButtonDown("JumpMouse"))
             {
-                Vector3 force = new Vector3(0, 1, 0) * jumpForce;
-                rb.AddForce(force);
+                if (timer <= 0)
+                {
+                    Vector3 force = new Vector3(0, 1, 0) * jumpForce;
+                    rb.AddForce(force);
+                    timer = jumpDelay;
+                }
             }
+
+            timer -= Time.deltaTime;
         }
     }
 

@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 public class ItemInventory : MonoBehaviour
 {
-    float timer = 0.0f;
-    float delay = 0.25f;
+    Spell spellCaster;
+    GameObject spellCreater;
+
+    public float timer = 0;
+    public float delay = 0.25f;
 
     public string spellName;
 
@@ -16,6 +19,9 @@ public class ItemInventory : MonoBehaviour
     void Awake()
     {
         playerInventory = new Dictionary<string, int>();
+
+        spellCreater = GameObject.FindGameObjectWithTag("script");
+        spellCaster = spellCreater.GetComponent<Spell>();
     }
 
     public void AddItem(string name, int amount)
@@ -33,13 +39,22 @@ public class ItemInventory : MonoBehaviour
             if (playerInventory.ContainsKey(name))
             {
                 playerInventory[name] += amount;
+                spellName = name;
                 string check = name.Substring(1);
-                if (check != "4")
+                // original is 4
+                if (check != "2")
                 {
                     int num = int.Parse(name);
                     num += 1;
                     string newNum = num.ToString();
-                    playerInventory.Add(newNum, 1);
+                    if (playerInventory.ContainsKey(newNum))
+                    {
+                        playerInventory[newNum] += 1;
+                    }
+                    else
+                    {
+                        playerInventory.Add(newNum, 1);
+                    }
                     spellName = newNum;
                 }
             }
@@ -65,6 +80,7 @@ public class ItemInventory : MonoBehaviour
         if (playerInventory.ContainsKey(name))
         {
             playerInventory.Remove(name);
+            spellName = "";
         }
     }
 
@@ -84,6 +100,8 @@ public class ItemInventory : MonoBehaviour
         {
             playerInventory[name] = 0;
         }
+
+        //spellName = "";
     }
 
     void Update()
@@ -109,18 +127,21 @@ public class ItemInventory : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            GameObject spellCreater = GameObject.FindGameObjectWithTag("script");
-            Spell spellCaster = spellCreater.GetComponent<Spell>();
-
-            if(playerInventory.Count == 0){
-                spellCaster.setPrefab(null);
-            }
-            else if(playerInventory.Count >= 1)
+            if (timer <= 0)
             {
-                spellCaster.setPrefab(spellName);
-            }
+                if (playerInventory.Count == 0)
+                {
+                    spellCaster.setPrefab(null);
+                }
+                else if (playerInventory.Count >= 1)
+                {
+                    spellCaster.setPrefab(spellName);
+                }
 
-            //spellCaster.Use();
+                timer = delay;
+
+                //spellCaster.Use();
+            }
         }
 
         timer -= Time.deltaTime;
