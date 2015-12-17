@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/StagePasser.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../UI Test/Assets/Code/DialogDisplay.cs">
     <Files>
-      <File FileName="Assets/Code/StagePasser.cs" Line="19" Column="2" />
+      <File FileName="../../UI Test/Assets/Code/DialogDisplay.cs" Line="6" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
