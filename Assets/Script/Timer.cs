@@ -38,6 +38,9 @@ public class Timer : MonoBehaviour
             {
                 timerText.text = "Game Over";
                 finalTime = timer;
+                if (finalTime < 0) {
+                    finalTime = 0;
+                }
                 GoalChecker.isOver = true;
             }
         }
