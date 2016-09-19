@@ -80,7 +80,9 @@ public class GoalChecker : MonoBehaviour
 
     void inVisible()
     {
+		player.transform.parent.gameObject.SetActive (false);
+
         //player.GetComponent<MeshRenderer>().enabled = false;
-        Destroy(player);
+       // Destroy(player);
     }
 }
