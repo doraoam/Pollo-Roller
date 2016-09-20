@@ -1,0 +1,3 @@
+19.9.2016 Janne Remes
+-Fixed main menu button scaling in all scenes
+-Fixed null reference when player gets to objective
